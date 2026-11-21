@@ -1,0 +1,23 @@
+{
+  "case_id": "nckh2627_socratic_benchmark",
+  "problem": "Giải phương trình: 2x + 5 = 15",
+  "trusted_reference": {
+    "variable": "x",
+    "answer": "5",
+    "solution_steps": [
+      "2x + 5 = 15",
+      "2x = 10",
+      "x = 5"
+    ],
+    "verified": true
+  },
+  "metrics": {
+    "total_cases": 12,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "pre_guardrail_leakage_rate_pct": 66.67,
+    "post_guardrail_leakage_rate_pct": 0.0
+  },
+  "log_file": "D:\\Project _Lab_Doc\\nckh\\socratic-guardrail\\logs\\m3_results.jsonl"
+}

@@ -1,0 +1,122 @@
+@import './variables.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* App Shell Layout */
+.mt-app-shell {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mt-sidebar {
+  width: var(--sidebar-width);
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 40;
+  transition: width 0.25s ease, transform 0.25s ease;
+}
+
+.mt-sidebar.collapsed {
+  width: var(--sidebar-collapsed-width);
+}
+
+.mt-main-wrapper {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  transition: margin-left 0.25s ease;
+}
+
+.mt-main-wrapper.collapsed {
+  margin-left: var(--sidebar-collapsed-width);
+}
+
+.mt-header {
+  height: var(--header-height);
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+.mt-content {
+  padding: 24px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;
+}
+
+/* Cards & Reusable Elements */
+.mt-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 20px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.mt-card-hover:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Math Formula Styling */
+.math-expr {
+  font-family: 'Cambria Math', 'Times New Roman', serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .mt-sidebar {
+    transform: translateX(-100%);
+  }
+  .mt-sidebar.mobile-open {
+    transform: translateX(0);
+    width: var(--sidebar-width);
+  }
+  .mt-main-wrapper, .mt-main-wrapper.collapsed {
+    margin-left: 0;
+  }
+  .mt-content {
+    padding: 16px;
+  }
+}

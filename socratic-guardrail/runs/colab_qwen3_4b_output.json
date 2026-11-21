@@ -1,0 +1,24 @@
+{
+  "case_id": "algebra_001",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "judge_mode": "mock_demo",
+  "problem": "Solve the equation: 2x + 3 = 11",
+  "policy": {
+    "max_help_level": 3,
+    "allow_final_answer": false
+  },
+  "final_status": "PASS",
+  "final_response": "What is the first step you should take to isolate the variable *x*?",
+  "trace": [
+    {
+      "attempt": 0,
+      "candidate": "What is the first step you should take to isolate the variable *x*?",
+      "decision": "PASS",
+      "violations": [],
+      "reason": "Demo assumes guiding question (not reliable)",
+      "observed_help_level": 1,
+      "judge_source": "mock",
+      "requires_regeneration": false
+    }
+  ]
+}
